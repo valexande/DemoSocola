@@ -21,18 +21,23 @@ The implementation of this component is straight forward, it will receive as inp
 
 ## (B) Component Name: Graph Similar
 
-Brief Description: This component will receive as input two graphs and will infer how much they are semantically related.
+**Brief Description:** This component will receive as input two graphs and will infer how much they are semantically related.
 
-Input: Two graphs.
+**Ιnput:** Two graphs.
 
-Output: A score on how much the two graphs are semantically connected
+**Output:** A score on how much the two graphs are semantically connected
+
         (1) the number of identical entities 
+        
         (2) similarity based on DBpedia comment boxes
+        
         (3) WUP similarity for the given entities
+        
         (4) the number of different paths (without loops)
+        
         (5) the existence or frequency of a given relation we value as intuitive (e.g., usedFor) that is found in paths
         
-Process:
+**Process:**
 This component will receive as input two graphs that were produced by the Subgraph Creator Component, and it will indicate if the two graphs are semantically connected and in which ways. Basically, is a knowledge graph parser, over small knowledge graphs where it will search for common nodes, and the variety of paths in which we could reach the centroid of one graph to the other. The centroid of each graph shall be considered as the node for which the graph was created. Therefore, if the parser finds common nodes, which are part of the english language,  it will infer that the two centroids are semantically connected. Moreover, if there are more paths than common nodes, from which we could reach one centroid to the other, the conclusion that the two centroids are semantically connected will be further backed up.
 
 Also, consider including ontological knowledge when comparing graphs and calculating path-based or relation-based metrics. For example, you may be given the term knife; apart from what is found in ConceptNet, you can also include information found maybe in DBPedia that knife is a type of tool used in the kitchen. In that case, you may add in the graph information about such tools and calculate metrics including such information.
