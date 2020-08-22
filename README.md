@@ -19,7 +19,7 @@ The implementation of this component is straight forward, it will receive as inp
 
 
 
-## (B) Component Name: Graph Similar
+## (B) Component Name: Graph Similarity
 
 **Brief Description:** This component will receive as input two graphs and will infer how much they are semantically related.
 
