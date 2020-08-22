@@ -5,21 +5,21 @@ My components for the first demo of Socola
 Currently this repo contains only the components of Alexandros Vassiliades
 
 
-<font color="green">(A) Component Name: Subgraph Creator</font>
+##**(A) Component Name: Subgraph Creator**
 
-Brief Description: This component will receive input the label of an Object and an Action (potentially also the label the pro and meta state), and will create a subgraph for each label using information from ConceptNet.
+**Brief Description:** This component will receive input the label of an Object and an Action (potentially also the label the pro and meta state), and will create a subgraph for each label using information from ConceptNet.
 
-Input: The label of an Object and an Action
+**Input:** The label of an Object and an Action
 
-Output: A subgraph for the Object, and a subgraph for the Action, created from the knowledge graph of ConceptNet
+**Output:** A subgraph for the Object, and a subgraph for the Action, created from the knowledge graph of ConceptNet
 
-Process:
+**Process:**
 The implementation of this component is straight forward, it will receive as input the label of an object and the label of an action (potentially it will receive the label of some states), and will create a subgraph of ConceptNet for each one. The component searches if the entity exists in the ConceptNet knowledge graph, and extracts all the nodes that are connected with it at depth 1 and 2. The component searches for nodes at depth 1 and 2 only based only on specific ConceptNet properties, which we can define as we desire. We keep it at depth 2 for now, because otherwise each subgraph needsf hours to be created, but if something like this is needed we can extend the component to do it. Finally, the subgraphs are exported into .json file for each pair of object-action, and they have the form:
 {object:{N1:{property1:[....], property2:[...]}, N2:{property1:[....], property2:[...]}}, action:{N1:{property1:[....], property2:[...]}, N2:{property1:[....], property2:[...]}}}.
 
 
 
-(B) Component Name: Graph Similar
+##**(B) Component Name: Graph Similar**
 
 Brief Description: This component will receive as input two graphs and will infer how much they are semantically related.
 
