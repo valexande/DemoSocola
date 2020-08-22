@@ -5,7 +5,7 @@ My components for the first demo of Socola
 Currently this repo contains only the components of Alexandros Vassiliades
 
 
-##**(A) Component Name: Subgraph Creator**
+## (A) Component Name: Subgraph Creator
 
 **Brief Description:** This component will receive input the label of an Object and an Action (potentially also the label the pro and meta state), and will create a subgraph for each label using information from ConceptNet.
 
@@ -19,7 +19,7 @@ The implementation of this component is straight forward, it will receive as inp
 
 
 
-##**(B) Component Name: Graph Similar**
+## (B) Component Name: Graph Similar
 
 Brief Description: This component will receive as input two graphs and will infer how much they are semantically related.
 
