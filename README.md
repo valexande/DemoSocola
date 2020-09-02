@@ -41,3 +41,17 @@ The implementation of this component is straight forward, it will receive as inp
 This component will receive as input two graphs that were produced by the Subgraph Creator Component, and it will indicate if the two graphs are semantically connected and in which ways. Basically, is a knowledge graph parser, over small knowledge graphs where it will search for common nodes, and the variety of paths in which we could reach the centroid of one graph to the other. The centroid of each graph shall be considered as the node for which the graph was created. Therefore, if the parser finds common nodes, which are part of the english language,  it will infer that the two centroids are semantically connected. Moreover, if there are more paths than common nodes, from which we could reach one centroid to the other, the conclusion that the two centroids are semantically connected will be further backed up.
 
 Also, consider including ontological knowledge when comparing graphs and calculating path-based or relation-based metrics. For example, you may be given the term knife; apart from what is found in ConceptNet, you can also include information found maybe in DBPedia that knife is a type of tool used in the kitchen. In that case, you may add in the graph information about such tools and calculate metrics including such information.
+
+
+
+## (C) Upper Level Ontology and Knowledge Graph Generator
+
+**Brief Description:** This component generates an RDF schema for the ULO
+
+**Ιnput:** List of Triplets
+
+**Output:** Upper Level Ontology + Domain Specific part of Ontology
+
+**Process:**
+This component populates the upper level ontology with information returned by the computer vision module. The upper level ontology was created based on other relevant studies about household robotics, and it contains the most important features needed in the knowledge representation of a cognitive robotic system which acts in a household environment. This component inserts information in the upper level ontology about Object and Actions Hierarchies, Object-Action relations, Object-State relations, and Object-Attribute relations. Basically, this component takes as input triplets from the vision module, and tries to infer what kind of information it is, in order to insert it in the appropriate part of the upper level ontology. The component receives triplets as input and based on the similarity of the Graph Similarity component decides if this information should exist in the KG of the framework.
+For example, if we have an object and an action returned by the vision module and the Graph Similarity component shows that the subgraph of these two are adequately related, it will insert the information (action, performedBy, object).
